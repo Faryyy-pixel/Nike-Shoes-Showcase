@@ -1,0 +1,55 @@
+/* GENERAL PAGE STYLING */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* light gray page background */
+    margin: 0;
+    padding: 20px;
+}
+
+/* HEADER TEXT */
+h1 {
+    text-align: center;
+    color: #111;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+/* SHOES CONTAINER */
+#shoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;       /* space between cards */
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* INDIVIDUAL SHOE CARDS */
+.shoe {
+    background-color: #ffffff;   /* white card for shoes */
+    padding: 15px;
+    width: 200px;                /* fixed card width */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column; 
+    justify-content:flex-start;     /* stack image + text vertically */
+    align-items:center;
+    flex:auto:         /* center horizontally */
+}
+
+/* SHOE IMAGE STYLING */
+.shoe img {
+    width: 100%;         /* fills card width */
+    height: auto;        /* keeps proportions correct */
+    border-radius: 8px;
+    object-fit: contain; /* ensures entire shoe fits inside card */
+    margin-bottom: 10px; /* space between image and text */
+}
+.shoe-info {
+    margin-top:auto;
+    text-align: center;
+}
