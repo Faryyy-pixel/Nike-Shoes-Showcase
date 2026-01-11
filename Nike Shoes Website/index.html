@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Shoes Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 20px;
+        }
+        .shoe-card {
+            min-width: 300px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .shoe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+        }
+        .close {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nike Shoes Showcase</h1>
+        <p>Discover the latest Nike footwear with real images and prices.</p>
+    </header>
+
+    <!-- First Row -->
+    <div class="gallery">
+        <!-- Air Jordan 1 -->
+        <div class="shoe-card" onclick="openModal('modal1')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-jordan-1-retro-high-og-mens-shoes-JHpxkn.png" alt="Air Jordan 1 Retro High OG">
+            <h3>Air Jordan 1 Retro High OG</h3>
+            <p>$170</p>
+        </div>
+
+        <!-- Nike Air Max 270 -->
+        <div class="shoe-card" onclick="openModal('modal2')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/awjogtdnqxniqqk0wpgf/air-max-270-mens-shoes-KkLcGR.png" alt="Nike Air Max 270">
+            <h3>Nike Air Max 270</h3>
+            <p>$150</p>
+        </div>
+
+        <!-- Nike Dunk Low -->
+        <div class="shoe-card" onclick="openModal('modal3')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4f37fca8-6bce-43e7-ad07-f57ae3c13142/dunk-low-mens-shoes-77MhDk.png" alt="Nike Dunk Low">
+            <h3>Nike Dunk Low</h3>
+            <p>$100</p>
+        </div>
+
+        <!-- Nike Air Force 1 -->
+        <div class="shoe-card" onclick="openModal('modal4')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1c1b3b7a-8b8b-4b8b-8b8b-8b8b8b8b8b8b/air-force-1-07-mens-shoes-5QFp5F.png" alt="Nike Air Force 1 '07">
+            <h3>Nike Air Force 1 '07</h3>
+            <p>$110</p>
+        </div>
+
+        <!-- Nike React Element 55 -->
+        <div class="shoe-card" onclick="openModal('modal5')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/react-element-55-mens-shoes-0jJlmc.png" alt="Nike React Element 55">
+            <h3>Nike React Element 55</h3>
+            <p>$130</p>
+        </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="gallery">
+        <!-- Nike Blazer Mid '77 -->
+        <div class="shoe-card" onclick="openModal('modal6')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/blazer-mid-77-mens-shoes-nw30B2.png" alt="Nike Blazer Mid '77">
+            <h3>Nike Blazer Mid '77</h3>
+            <p>$90</p>
+        </div>
+
+        <!-- Nike Pegasus 40 -->
+        <div class="shoe-card" onclick="openModal('modal7')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/awjogtdnqxniqqk0wpgf/pegasus-40-mens-road-running-shoes-wide-9hBmlF.png" alt="Nike Pegasus 40">
+            <h3>Nike Pegasus 40</h3>
+            <p>$130</p>
+        </div>
+
+        <!-- Nike Zoom Pegasus Turbo -->
+        <div class="shoe-card" onclick="openModal('modal8')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/zoom-pegasus-turbo-mens-road-running-shoes-8qKXWz.png" alt="Nike Zoom Pegasus Turbo">
+            <h3>Nike Zoom Pegasus Turbo</h3>
+            <p>$180</p>
+        </div>
+
+        <!-- Nike Metcon 9 -->
+        <div class="shoe-card" onclick="openModal('modal9')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4f37fca8-6bce-43e7-ad07-f57ae3c13142/metcon-9-mens-training-shoes-5t4Q4D.png" alt="Nike Metcon 9">
+            <h3>Nike Metcon 9</h3>
+            <p>$130</p>
+        </div>
+
+        <!-- Nike Air Zoom Pegasus 39 -->
+        <div class="shoe-card" onclick="openModal('modal10')">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-zoom-pegasus-39-mens-road-running-shoes-8qKXWz.png" alt="Nike Air Zoom Pegasus 39">
+            <h3>Nike Air Zoom Pegasus 39</h3>
+            <p>$120</p>
+        </div>
+    </div>
+
+    <!-- Modals for detailed view -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Air Jordan 1 Retro High OG</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-jordan-1-retro-high-og-mens-shoes-JHpxkn.png" alt="Air Jordan 1 Retro High OG" style="width:100%;">
+            <p>Price: $170</p>
+            <p>The iconic Air Jordan 1 Retro High OG features premium leather and the original design that started it all.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Nike Air Max 270</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/awjogtdnqxniqqk0wpgf/air-max-270-mens-shoes-KkLcGR.png" alt="Nike Air Max 270" style="width:100%;">
+            <p>Price: $150</p>
+            <p>Designed with a massive Air Max unit, this shoe offers all-day comfort and style.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Nike Dunk Low</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4f37fca8-6bce-43e7-ad07-f57ae3c13142/dunk-low-mens-shoes-77MhDk.png" alt="Nike Dunk Low" style="width:100%;">
+            <p>Price: $100</p>
+            <p>A classic basketball-inspired silhouette with durable leather and a low-top design.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Nike Air Force 1 '07</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1c1b3b7a-8b8b-4b8b-8b8b-8b8b8b8b8b8b/air-force-1-07-mens-shoes-5QFp5F.png" alt="Nike Air Force 1 '07" style="width:100%;">
+            <p>Price: $110</p>
+            <p>The legendary AF1 with its timeless style and comfortable fit.</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Nike React Element 55</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/react-element-55-mens-shoes-0jJlmc.png" alt="Nike React Element 55" style="width:100%;">
+            <p>Price: $130</p>
+            <p>Retro-inspired with React foam for lightweight cushioning.</p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Nike Blazer Mid '77</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/blazer-mid-77-mens-shoes-nw30B2.png" alt="Nike Blazer Mid '77" style="width:100%;">
+            <p>Price: $90</p>
+            <p>A vintage basketball classic with a mid-top design and durable construction.</p>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <h2>Nike Pegasus 40</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/awjogtdnqxniqqk0wpgf/pegasus-40-mens-road-running-shoes-wide-9hBmlF.png" alt="Nike Pegasus 40" style="width:100%;">
+            <p>Price: $130</p>
+            <p>The reliable running shoe with responsive cushioning for everyday training.</p>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <h2>Nike Zoom Pegasus Turbo</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/zoom-pegasus-turbo-mens-road-running-shoes-8qKXWz.png" alt="Nike Zoom Pegasus Turbo" style="width:100%;">
+            <p>Price: $180</p>
+            <p>Engineered for speed with Zoom Air units and a lightweight upper.</p>
+        </div>
+    </div>
+
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <h2>Nike Metcon 9</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4f37fca8-6bce-43e7-ad07-f57ae3c13142/metcon-9-mens-training-shoes-5t4Q4D.png" alt="Nike Metcon 9" style="width:100%;">
+            <p>Price: $130</p>
+            <p>Versatile training shoe with stability and durability for gym workouts.</p>
+        </div>
+    </div>
+
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <h2>Nike Air Zoom Pegasus 39</h2>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-zoom-pegasus-39-mens-road-running-shoes-8qKXWz.png" alt="Nike Air Zoom Pegasus 39" style="width:100%;">
+            <p>Price: $120</p>
+            <p>Comfortable running shoe with Zoom Air technology for responsive cushioning.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
